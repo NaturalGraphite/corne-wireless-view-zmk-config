@@ -14,7 +14,7 @@
                     compatible = "zmk,behavior-hold-tap";
                     label = "HOMEROW_MODS";
                     #binding-cells = <2>;
-                    tapping-term-ms = <150>;
+                    tapping-term-ms = <200>;
                     quick-tap-ms = <0>;
                     flavor = "tap-preferred";
                     bindings = <&kp>, <&kp>;
@@ -31,10 +31,10 @@
 //                   | TAB | LWR | SPC |   | BKSP| RSE | RET |
                         label = "Base";
                         bindings = <
-   &kp ESC   &kp Q       &kp W        &kp E        &kp R            &kp T       &kp Y    &kp U         &kp I        &kp O       &kp P         &kp ESC
-   &mo 2     &hm LGUI A  &hm LALT S   &hm LCTRL D  &hm LSHIFT F     &kp G       &kp H    &hm RSHIFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMI &kp SQT
-   &kp RET   &kp Z       &kp X        &kp C        &kp V            &kp B       &kp N    &kp M         &kp COMMA    &kp DOT     &kp FSLH      &kp RET
-                                          &kp TAB      &mo 1        &kp SPACE   &kp BSPC &mo 2         &kp RET
+   &kp ESC   &kp Q       &kp W        &kp E        &kp R            &kp T               &kp Y     &kp U         &kp I        &kp O       &kp P         &kp ESC
+   &mo 2     &hm LGUI A  &hm LALT S   &hm LCTRL D  &hm LSHIFT F     &kp G               &kp H     &hm RSHIFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMI &kp SQT
+   &kp RET   &kp Z       &kp X        &kp C        &kp V            &kp B               &kp N     &kp M         &kp COMMA    &kp DOT     &kp FSLH      &kp RET
+                                          &kp TAB      &mo 1        &kp SPACE           &kp RET   &kp BSPC      &kp DEL
                         >;
                 };
                 lower_layer {
@@ -45,10 +45,10 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         label = "Lower";
                         bindings = <
-   &trans    &trans         &trans         &trans        &trans            &trans        &kp EQUAL        &kp N7         &kp N8        &kp N9        &kp MINUS          &trans
-   &trans    &hm LGUI LEFT  &hm LALT DOWN  &hm LCTRL UP  &hm LSHIFT RIGHT  &trans        &kp KP_MULTIPLY  &hm RSHIFT N4  &hm RCTRL N5  &hm RALT N6   &hm RGUI KP_DIVIDE &trans
-   &trans    &kp HOME       &kp PG_DN      &kp PG_UP     &kp END           &kp K_APP     &kp LPAR         &kp N1         &kp N2        &kp N3        &kp RPAR           &trans
-                                           &trans        &trans            &trans        &kp N0           &trans         &trans
+   &trans    &trans         &trans         &trans        &trans            &trans          &kp PLUS         &kp N7         &kp N8        &kp N9        &kp MINUS          &trans
+   &trans    &hm LGUI LEFT  &hm LALT DOWN  &hm LCTRL UP  &hm LSHIFT RIGHT  &trans          &kp KP_MULTIPLY  &hm RSHIFT N4  &hm RCTRL N5  &hm RALT N6   &hm RGUI KP_DIVIDE &trans
+   &trans    &kp HOME       &kp PG_DN      &kp PG_UP     &kp END           &kp K_APP       &kp LPAR         &kp N1         &kp N2        &kp N3        &kp RPAR           &trans
+                                           &trans        &trans            &trans          &kp EQUAL        &kp N0         &kp DOT
                         >;
                 };
 
@@ -56,14 +56,14 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         label = "Raise";
                         bindings = <
-   &kp TAB     &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT         &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-   &kp LSHFT   &trans        &trans        &trans        &trans        &trans            &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                    	     &kp LGUI      &trans        &kp SPACE                       &kp RET    &trans     &kp RALT
+   &trans      &trans        &trans        &trans        &trans        &trans              &kp PSCRN   &kp F7         &kp F8        &kp F9        &kp F12          &trans
+   &trans      &trans        &trans        &trans        &trans        &trans              &trans      &hm RSHIFT F4  &hm RCTRL F5  &hm RALT F6   &hm RGUI F11     &trans
+   &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4        &trans      &kp F1         &kp F2        &kp F3        &kp F10          &trans
+                    	                   &trans        &trans        &trans              &trans      &trans         &trans
                         >;
                 };
         };
